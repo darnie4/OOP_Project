@@ -12,6 +12,7 @@
 int main() {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
+    //initialise variables
     int totalScore = 0;
     const int numDays = 14;
     const int numOptions = 4;
@@ -22,6 +23,7 @@ int main() {
     displayDayHeader(1, isFirstDay);
     isFirstDay = false;
 
+    //Each iteration of this loop corresponds to a day in game
     for (int day = 1; day <= numDays; day++) {
         std::vector<Flavour> requiredFlavours;
         for (int i = 0; i < numFlavours; i++) {

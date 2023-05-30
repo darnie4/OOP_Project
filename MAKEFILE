@@ -1,0 +1,21 @@
+
+executable: main.o Ingredient.o Meal.o Flavour.o Helper.o
+	clang++ main.o Ingredient.o Meal.o Flavour.o Helper.o -o executable -std=c++11
+
+main.o: main.cpp
+	clang++ -c main.cpp -std=c++11
+
+Ingredient.o: Ingredient.cpp Ingredient.h 
+	clang++ -c Ingredient.cpp Flavour.cpp -std=c++11
+
+Meal.o: Meal.cpp Meal.h 
+	clang++ -c Meal.cpp Ingredient.cpp -std=c++11
+
+Flavour.o: Flavour.cpp 
+	clang++ -c Flavour.cpp -std=c++11
+
+Helper.o: Helper.cpp Helper.h 
+	clang++ -c Helper.cpp Meal.cpp Flavour.cpp -std=c++11
+
+clean:
+	rm *.o executable

@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Helper.h"
 
+
 int getUserInput() {
     int input;
     std::cin >> input;
@@ -52,6 +53,7 @@ void displayFlavours(const std::vector<Flavour>& flavours) {
     }
 }
 
+
 void displayIngredients(const std::vector<Meal>& meals) {
     std::cout << "Welcome to the shops! What combinations of ingredients do you want today?" << std::endl;
     for (size_t i = 0; i < meals.size(); i++) {
@@ -70,6 +72,7 @@ bool validateInput(int input, int max) {
     return (input >= 1 && input <= max);
 }
 
+
 void displayResult(bool isCorrect) {
     if (isCorrect) {
         std::cout << "You have cooked ";
@@ -77,6 +80,7 @@ void displayResult(bool isCorrect) {
         std::cout << "Incorrect input, please try again!" << std::endl;
     }
 }
+
 
 void displayScore(int score, int total) {
     std::cout << "You have earned a score of " << score << "/" << total << "." << std::endl;
