@@ -2,16 +2,18 @@
 #define MEAL_H
 
 #include <vector>
-#include "ingredient.h"
+#include "Ingredient.h"
 
 class Meal {
 private:
-    std::vector<Ingredient*> recipe;
-    std::vector<Ingredient*> ingredients;
-
+    std::string name;
+    std::vector<Ingredient> ingredients;
+    std::vector<Flavour> flavours;
 public:
-    void addIngredient(Ingredient* ingredient);
-    void addRecipeIngredient(Ingredient* ingredient);
+    Meal(const std::string& name, const std::vector<Ingredient>& ingredients, const std::vector<Flavour>& flavours);
+    std::string getName() const;
+    std::vector<Ingredient> getIngredients() const;
+    std::vector<Flavour> getFlavours() const;
 };
 
 #endif // MEAL_H

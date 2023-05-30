@@ -3,22 +3,16 @@
 
 #include <string>
 #include <vector>
-#include "food.h"
+#include "Flavour.cpp"
 
-class Ingredient : public Food {
+class Ingredient {
 private:
     std::string name;
-    bool needsCooking;
-    std::vector<Flavor> flavors;
-
+    Flavour flavour;
 public:
-    Ingredient(const std::string& n, bool cooked);
-
-    void addFlavor(Flavor f);
-    void setCooked(bool cooked);
+    Ingredient(const std::string& name, Flavour flavour);
     std::string getName() const;
-    bool getNeedsCooking() const;
-    const std::vector<Flavor>& getFlavors() const;
+    Flavour getFlavour() const;
 };
 
 #endif // INGREDIENT_H

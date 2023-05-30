@@ -1,23 +1,12 @@
-#include "ingredient.h"
+#include "Ingredient.h"
 
-Ingredient::Ingredient(const std::string& n, bool cooked) : name(n), needsCooking(cooked) {}
-
-void Ingredient::addFlavor(Flavor f) {
-    flavors.push_back(f);
-}
-
-void Ingredient::setCooked(bool cooked) {
-    needsCooking = cooked;
-}
+Ingredient::Ingredient(const std::string& name, Flavour flavour)
+    : name(name), flavour(flavour) {}
 
 std::string Ingredient::getName() const {
     return name;
 }
 
-bool Ingredient::getNeedsCooking() const {
-    return needsCooking;
-}
-
-const std::vector<Flavor>& Ingredient::getFlavors() const {
-    return flavors;
+Flavour Ingredient::getFlavour() const {
+    return flavour;
 }
